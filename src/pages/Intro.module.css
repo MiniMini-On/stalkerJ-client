@@ -1,16 +1,162 @@
 .div {
-  width: 50%;
-  height: 50vh;
-  /* background-color: white; */
+  width: 70vw;
+  height: 30vw;
+  /* background-color: black; */
+  margin: 0px auto;
+  margin-top: 13vw;
+  text-align: center;
 }
 
+.wrap {
+  position: absolute;
+}
+
+.bg {
+  position: absolute;
+  /* top: -20vw; */
+  width: 70vw;
+  height: 10vw;
+  margin: 0px auto;
+  background-color: black;
+  opacity: 0.5;
+}
 .script {
+  position: absolute;
   color: white;
-  width: 50%;
-  height: 40vh;
+  font-size: 2.5vw;
+  line-height: 10vw;
+  width: 70vw;
+  height: 10vw;
+  margin: auto;
+  z-index: 1;
+  text-align: center;
+
+  /* background-color: white;
+  opacity: 0.5; */
 }
 
 .img {
-  width: 40vw;
-  height: 40vw;
+  width: 10vw;
+  height: 10vw;
+}
+
+@-webkit-keyframes vibrate {
+  0% {
+    left: 47vw;
+    color: #4361ee;
+  }
+  50% {
+    left: 46.5vw;
+    color: #d00000;
+  }
+  100% {
+    left: 47.5vw;
+    color: #d00000;
+  }
+}
+@keyframes vibrate {
+  0% {
+    left: 47vw;
+    color: #4361ee;
+  }
+  50% {
+    left: 46.5vw;
+    color: #d00000;
+  }
+  100% {
+    left: 47.5vw;
+    color: #d00000;
+  }
+}
+
+.button {
+  position: absolute;
+  left: 47vw;
+  top: 30vw;
+  color: white;
+  font-size: 3vw;
+  background-color: transparent;
+  border: none;
+  z-index: 1;
+  width: 5vw;
+}
+
+.button:hover,
+.button2:hover {
+  color: brown;
+  cursor: pointer;
+}
+
+.button2 {
+  position: absolute;
+  left: 47vw;
+  top: 18vw;
+  color: white;
+  font-size: 5vw;
+  background-color: transparent;
+  border: none;
+  z-index: 1;
+}
+
+.vib {
+  position: absolute;
+  left: 49vw;
+  top: 30vw;
+  width: 5vw;
+  color: white;
+  font-size: 3vw;
+  background-color: transparent;
+  border: none;
+  z-index: 1;
+  -webkit-animation-duration: 0.05s;
+  animation-duration: 0.05s;
+  -webkit-animation-name: vibrate;
+  animation-name: vibrate;
+  animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+  animation-iteration-count: 10;
+  cursor: pointer;
+
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes bigger {
+  0% {
+    font-size: 5vw;
+  }
+
+  100% {
+    left: -80vw;
+    top: -60vw;
+    font-size: 200vw;
+    /* opacity: 0; */
+  }
+}
+@keyframes bigger {
+  0% {
+    font-size: 5vw;
+  }
+
+  100% {
+    left: -80vw;
+    top: -60vw;
+    font-size: 200vw;
+    opacity: 0;
+    background-color: white;
+  }
+}
+.bigger {
+  position: absolute;
+  left: 47vw;
+  top: 18vw;
+  color: white;
+  /* font-size: 5vw; */
+  background-color: transparent;
+  border: none;
+  z-index: 1;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-name: bigger;
+  animation-name: bigger;
+  animation-direction: normal;
+  -webkit-animation-direction: normal;
 }

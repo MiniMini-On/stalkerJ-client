@@ -1,3 +1,5 @@
+@import "https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css";
+
 * {
   margin: 0px;
   padding: 0px;
@@ -8,6 +10,9 @@ body {
   background-image: url(./static/images/man.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+  text-align: center;
+  font-family: "KirangHaerang";
+  overflow: hidden;
 }
 
 header {
