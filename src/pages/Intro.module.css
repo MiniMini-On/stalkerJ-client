@@ -1,0 +1,16 @@
+.div {
+  width: 50%;
+  height: 50vh;
+  /* background-color: white; */
+}
+
+.script {
+  color: white;
+  width: 50%;
+  height: 40vh;
+}
+
+.img {
+  width: 40vw;
+  height: 40vw;
+}
