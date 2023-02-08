@@ -9,7 +9,7 @@ import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 
 function Intro() {
   const [isHovering, setIsHovering] = useState(0);
-  const [style, setStyle] = useState(styles.button2);
+  const [isClicked, setIsClicked] = useState(0);
   const navigate = useNavigate();
   const script = [
     "나는 은둔형 개발자로 1년을 집에서만 지냈다.",
@@ -31,25 +31,26 @@ function Intro() {
   };
 
   const goMain = () => {
-    setStyle(styles.bigger);
+    setIsClicked(1);
 
     setTimeout(function () {
       navigate("/main");
-    }, 1000);
+    }, 3500);
   };
 
   useEffect(() => {
     setDisplay(script[num]);
   }, [num]);
-
+  console.log(isClicked);
   return (
     <div className={styles.div}>
       <div className={styles.wrap}>
         <div className={styles.script}>{display}</div>
-        {style == styles.button2 ? <div className={styles.bg}></div> : ""}
+        {isClicked ? "" : <div className={styles.bg}></div>}
       </div>
+      {isClicked ? <div className={styles.door}></div> : ""}
       {num == script.length ? (
-        <button className={style} onClick={goMain} onMouseOver={() => setIsHovering(1)} onMouseOut={() => setIsHovering(0)}>
+        <button className={styles.button2} onClick={goMain} onMouseOver={() => setIsHovering(1)} onMouseOut={() => setIsHovering(0)}>
           {isHovering ? <FontAwesomeIcon icon={faDoorOpen} /> : <FontAwesomeIcon icon={faDoorClosed} />}
         </button>
       ) : (
