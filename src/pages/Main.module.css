@@ -1,12 +1,70 @@
-div {
-  /* color: white; */
+.form {
+  position: absolute;
+  width: 100vw;
+  height: 35vw;
+  top: 6vw;
+  /* left: 25vw; */
   font-size: 3vw;
+  /* background-color: green; */
+  line-height: 2;
+  z-index: 10;
 }
 
-h2 {
+.h2 {
   color: blue;
 }
 
-input {
+.input {
+  opacity: 0;
+}
+
+.label {
+  color: white;
+}
+
+.label:hover {
+  cursor: pointer;
   color: red;
+}
+
+.choice {
+  color: red;
+}
+
+.button {
+  position: absolute;
+  left: 48vw;
+  top: 30vw;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 5vw;
+  width: 6vw;
+  height: 4vw;
+}
+
+.button:hover {
+  cursor: pointer;
+  /* color: brown; */
+}
+
+.wrap {
+  margin-top: 3vw;
+}
+
+.bg {
+  position: absolute;
+  width: 100vw;
+  height: 50vw;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.modal {
+  position: absolute;
+  top: 33vw;
+  left: 43vw;
+  color: white;
+  font-size: 2vw;
 }

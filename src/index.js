@@ -6,15 +6,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
+import { MbtiContextProvider } from "./hooks/Context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 axios.defaults.baseURL = "https://kimduhong.pythonanywhere.com/";
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
+  <BrowserRouter>
+    <MbtiContextProvider>
       <App />
-    </BrowserRouter>
-  </React.StrictMode>
+    </MbtiContextProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

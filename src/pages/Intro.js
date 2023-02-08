@@ -3,9 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Intro.module.css";
 import msgImg from "../static/images/msg.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMobileScreen } from "@fortawesome/free-solid-svg-icons";
-import { faDoorClosed } from "@fortawesome/free-solid-svg-icons";
-import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
+import { faMobileScreen, faDoorClosed, faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 
 function Intro() {
   const [isHovering, setIsHovering] = useState(0);
