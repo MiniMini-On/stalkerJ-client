@@ -7,7 +7,6 @@ import { faFaceMehBlank, faFaceRollingEyes, faFaceSurprise } from "@fortawesome/
 import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 import useMbti from "../hooks/useMbti";
 import calculate from "../helper/calculate";
-import { Cookie } from "../helper/Cookie";
 
 function Main() {
   const navigate = useNavigate();
@@ -109,7 +108,7 @@ function Main() {
       setTotalResult(totalResult + result);
       setMbti(calculate(totalResult + result));
       setRaw(totalResult + result);
-      Cookie.set("raw", totalResult + result);
+      sessionStorage.setItem("key", totalResult + result);
       navigate("/result");
     }
   };
