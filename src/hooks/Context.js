@@ -3,6 +3,8 @@ import { useState, createContext } from "react";
 export const MbtiContext = createContext({
   mbti: "",
   setMbti: () => {},
+  raw: "",
+  setRaw: () => {},
 });
 
 export function MbtiContextProvider(props) {
@@ -14,6 +16,8 @@ export function MbtiContextProvider(props) {
       value={{
         mbti,
         setMbti,
+        raw,
+        setRaw,
       }}
     >
       {props.children}

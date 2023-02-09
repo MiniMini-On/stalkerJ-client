@@ -3,9 +3,11 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Main.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFaceMehBlank, faFaceRollingEyes } from "@fortawesome/free-regular-svg-icons";
+import { faFaceMehBlank, faFaceRollingEyes, faFaceSurprise } from "@fortawesome/free-regular-svg-icons";
+import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 import useMbti from "../hooks/useMbti";
 import calculate from "../helper/calculate";
+import { Cookie } from "../helper/Cookie";
 
 function Main() {
   const navigate = useNavigate();
@@ -22,7 +24,7 @@ function Main() {
   const [isHovering, setIsHovering] = useState(0);
   const [modal, setModal] = useState(0);
 
-  const { mbti, setMbti } = useMbti();
+  const { setMbti, setRaw } = useMbti();
 
   useEffect(() => {
     axios
@@ -105,7 +107,9 @@ function Main() {
       }, 1000);
     } else if (!result == "") {
       setTotalResult(totalResult + result);
-      setMbti(calculate(totalResult));
+      setMbti(calculate(totalResult + result));
+      setRaw(totalResult + result);
+      Cookie.set("raw", totalResult + result);
       navigate("/result");
     }
   };
@@ -144,7 +148,9 @@ function Main() {
               </label>
             </div>
             {surveyId == totalSurvey ? (
-              <button onClick={showResult}>결과보기</button>
+              <button className={styles.button} onClick={showResult} onMouseOver={() => setIsHovering(1)} onMouseOut={() => setIsHovering(0)}>
+                {isHovering ? <FontAwesomeIcon icon={faUserTie} /> : <FontAwesomeIcon icon={faFaceSurprise} />}
+              </button>
             ) : (
               <button className={styles.button} onClick={next} onMouseOver={() => setIsHovering(1)} onMouseOut={() => setIsHovering(0)}>
                 {isHovering ? <FontAwesomeIcon icon={faFaceRollingEyes} /> : <FontAwesomeIcon icon={faFaceMehBlank} />}
