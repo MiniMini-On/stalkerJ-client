@@ -21,6 +21,8 @@ function calculate(totalResult) {
   calculation.j > calculation.p ? (raw += "j") : (raw += "p");
 
   console.log(raw);
+  sessionStorage.setItem("mbti", raw);
+
   return raw;
 }
 

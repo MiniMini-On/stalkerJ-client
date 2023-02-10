@@ -30,9 +30,6 @@
   margin: auto;
   z-index: 1;
   text-align: center;
-
-  /* background-color: white;
-  opacity: 0.5; */
 }
 
 .img {
@@ -240,20 +237,97 @@
 }
 .door {
   position: absolute;
-  width: 30vw;
+  width: 28vw;
   height: 30vw;
   left: 35vw;
   top: 12vw;
   color: white;
-  /* background-image: url("../static/images/door1.jpg"); */
-
+  background-image: url("../static/images/door.gif");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #101010;
+  border-radius: 20px;
+  box-shadow: 5px 10px 8px #101010;
   z-index: 5;
-
+  /* 
   animation-delay: 0.5s;
   -webkit-animation-duration: 3s;
   animation-duration: 3s;
   -webkit-animation-name: door;
   animation-name: door;
   animation-direction: normal;
-  -webkit-animation-direction: normal;
+  -webkit-animation-direction: normal; */
+}
+
+@media (orientation: portrait) {
+  .div {
+    width: 70vw;
+    height: 30vw;
+    /* background-color: black; */
+    margin: 0px auto;
+    margin-top: 10vh;
+    text-align: center;
+  }
+  .bg {
+    display: none;
+  }
+  .script {
+    position: absolute;
+    color: white;
+    font-size: 7.5vw;
+    line-height: 10vw;
+    width: 70vw;
+    height: 10vw;
+    margin: auto;
+    z-index: 1;
+    text-align: center;
+  }
+  .button {
+    position: absolute;
+    left: 45vw;
+    top: 40vh;
+    color: white;
+    font-size: 10vw;
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+    width: 5vw;
+  }
+
+  .button2 {
+    position: absolute;
+    left: 40vw;
+    top: 30vh;
+    color: white;
+    font-size: 20vw;
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+  }
+
+  .vib {
+    position: absolute;
+    left: 45vw;
+    top: 40vh;
+    width: 5vw;
+    color: white;
+    font-size: 10vw;
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+    -webkit-animation-duration: 0.05s;
+    animation-duration: 0.05s;
+    -webkit-animation-name: vibrate;
+    animation-name: vibrate;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    animation-iteration-count: 10;
+    cursor: pointer;
+    animation-fill-mode: forwards;
+  }
+
+  .img {
+    width: 40vw;
+    height: 40vw;
+  }
 }

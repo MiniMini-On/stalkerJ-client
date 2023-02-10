@@ -10,6 +10,7 @@ body {
   background-image: url(./static/images/man.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+  background-color: #101010;
   text-align: center;
   font-family: "KirangHaerang";
   overflow: hidden;
@@ -30,15 +31,15 @@ h1 {
   font-family: "KirangHaerang";
 }
 
-/* .App-link {
-  color: #61dafb;
+@media (orientation: portrait) {
+  body {
+    background-image: url(./static/images/man_mobile.jpg);
+    background-color: #101010;
+    background-position: center -90%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-align: center;
+    font-family: "KirangHaerang";
+    overflow: hidden;
+  }
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

@@ -108,7 +108,7 @@ function Main() {
       setTotalResult(totalResult + result);
       setMbti(calculate(totalResult + result));
       setRaw(totalResult + result);
-      sessionStorage.setItem("key", totalResult + result);
+      sessionStorage.setItem("raw", totalResult + result);
       navigate("/result");
     }
   };
@@ -157,7 +157,7 @@ function Main() {
             )}
           </>
         ) : (
-          ""
+          <div className={styles.loading}>Now loading ...</div>
         )}
       </form>
       <div className={styles.bg}></div>

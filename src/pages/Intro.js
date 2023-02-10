@@ -33,13 +33,13 @@ function Intro() {
 
     setTimeout(function () {
       navigate("/main");
-    }, 3500);
+    }, 4200);
   };
 
   useEffect(() => {
     setDisplay(script[num]);
   }, [num]);
-  console.log(isClicked);
+  // console.log(isClicked);
   return (
     <div className={styles.div}>
       <div className={styles.wrap}>

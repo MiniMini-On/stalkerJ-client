@@ -33,7 +33,7 @@
 
 .button {
   position: absolute;
-  left: 48vw;
+  left: 47vw;
   top: 30vw;
   background-color: transparent;
   color: white;
@@ -67,4 +67,9 @@
   left: 43vw;
   color: white;
   font-size: 2vw;
+}
+
+.loading {
+  font-size: 5vw;
+  color: white;
 }
