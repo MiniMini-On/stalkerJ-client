@@ -1,8 +1,8 @@
 .progress {
-  position: absolute;
+  position: fixed;
   width: 90vw;
   height: 5vw;
-  top: 33vw;
+  top: 80vh;
   line-height: 5vw;
   left: 5vw;
   font-size: 3vw;

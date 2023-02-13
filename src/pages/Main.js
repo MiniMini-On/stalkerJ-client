@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Main.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceMehBlank, faFaceRollingEyes, faFaceSurprise } from "@fortawesome/free-regular-svg-icons";
-import { faUserTie } from "@fortawesome/free-solid-svg-icons";
+import { faUserTie, faShare } from "@fortawesome/free-solid-svg-icons";
 import useMbti from "../hooks/useMbti";
 import calculate from "../helper/calculate";
 import ProgressBar from "../components/ProgressBar";
@@ -26,19 +26,19 @@ function Main() {
   const { setMbti, setRaw } = useMbti();
 
   useEffect(() => {
+    setIsHovering(0);
+
     axios
       .get("api/v1/servey")
       .then((res) => {
-        console.log(res);
-        console.log(res.data);
-        console.log(res.data.length);
+        // console.log(res.data.length);
         setTotalSurvey(res.data.length);
       })
       .then(() => {
         axios
           .get(`api/v1/servey/${surveyId}`)
           .then((res) => {
-            console.log(res);
+            // console.log(res);
             setQuestion(res.data.title);
             setAnswer1(res.data.first_answer);
             setAnswer2(res.data.second_answer);
@@ -69,10 +69,11 @@ function Main() {
       axios
         .get(`api/v1/servey/${surveyId}`)
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           setQuestion(res.data.title);
           setAnswer1(res.data.first_answer);
           setAnswer2(res.data.second_answer);
+          setIsHovering(0);
         })
         .catch((err) => err);
     }
@@ -82,6 +83,7 @@ function Main() {
     if (!result == "") {
       setTotalResult(totalResult + result);
       setSurveyId(surveyId + 1);
+      setIsHovering(0);
     } else if (result == "") {
       setModal(1);
       setTimeout(function () {
@@ -94,9 +96,9 @@ function Main() {
     e.preventDefault();
   };
 
-  useEffect(() => {
-    console.log(totalResult);
-  }, [totalResult]);
+  // useEffect(() => {
+  //   console.log(totalResult);
+  // }, [totalResult]);
 
   const showResult = () => {
     if (result == "") {
@@ -154,6 +156,16 @@ function Main() {
               <button className={styles.button} onClick={next} onMouseOver={() => setIsHovering(1)} onMouseOut={() => setIsHovering(0)}>
                 {isHovering ? <FontAwesomeIcon icon={faFaceRollingEyes} /> : <FontAwesomeIcon icon={faFaceMehBlank} />}
               </button>
+            )}
+            {!result == "" ? (
+              <div className={styles.clickMe}>
+                <div className={styles.arrow}>
+                  <FontAwesomeIcon icon={faShare} />
+                </div>
+                <div>click me</div>
+              </div>
+            ) : (
+              ""
             )}
             <ProgressBar surveyId={surveyId} />
           </>

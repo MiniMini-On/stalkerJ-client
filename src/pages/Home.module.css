@@ -18,6 +18,9 @@
 }
 
 .button {
+  position: fixed;
+  top: 60vh;
+  left: 46.5vw;
   width: 7vw;
   height: 4vw;
   border-radius: 30%;
@@ -74,9 +77,9 @@
     width: 17vw;
     height: 10vw;
     border-radius: 30%;
-    margin-top: 3vw;
+    margin-top: 10vw;
     font-size: 7vw;
-    background-color: transparent;
+    background-color: black;
     border: 2px solid white;
     color: white;
   }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./ProgressBar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPersonWalking, faMapPin, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faPersonWalking, faMapPin, faQuestion } from "@fortawesome/free-solid-svg-icons";
 
 function ProgressBar({ surveyId }) {
   const [arr, setArr] = useState([]);
@@ -50,7 +50,7 @@ function ProgressBar({ surveyId }) {
         );
       })}
       <div>
-        <FontAwesomeIcon icon={faLocationDot} />
+        <FontAwesomeIcon icon={faQuestion} />
       </div>
     </div>
   );
