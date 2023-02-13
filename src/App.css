@@ -9,6 +9,7 @@
 body {
   background-image: url(./static/images/man.jpg);
   background-repeat: no-repeat;
+  background-position: center 30vh;
   background-size: 100%;
   background-color: #101010;
   text-align: center;
@@ -35,11 +36,17 @@ h1 {
   body {
     background-image: url(./static/images/man_mobile.jpg);
     background-color: #101010;
-    background-position: center -90%;
+    background-position: center 50vh;
     background-repeat: no-repeat;
     background-size: 100%;
     text-align: center;
     font-family: "KirangHaerang";
-    overflow: hidden;
+    overflow: scroll;
+  }
+  h1 {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 40px;
+    font-family: "KirangHaerang";
   }
 }

@@ -6,7 +6,8 @@ import axios from "axios";
 import useMbti from "../hooks/useMbti";
 import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon } from "react-share";
 import { Helmet } from "react-helmet";
-import KakaoShareButton from "../components/KakaoShareButton";
+// import KakaoShareButton from "../components/KakaoShareButton";
+import KakaoShareBtn from "../components/KakaoShareBtn";
 
 function Result() {
   const navigate = useNavigate();
@@ -18,6 +19,12 @@ function Result() {
 
   // api POST - axios.defaults.baseURL = "https://kimduhong.pythonanywhere.com/";
   useEffect(() => {
+    // 카카오 공유를 위한 카카오 sdk 추가
+    const script = document.createElement("script");
+    script.src = "https://developers.kakao.com/sdk/js/kakao.js";
+    script.async = true;
+    document.body.appendChild(script);
+    // mbti가 없으면 sessionStorage에서 불러옴
     if (mbti == "" && sessionStorage.getItem("mbti") && sessionStorage.getItem("raw")) {
       setMbti(sessionStorage.getItem("mbti"));
       setRaw(sessionStorage.getItem("raw"));
@@ -33,6 +40,7 @@ function Result() {
           setInit(1);
         })
         .catch((err) => err);
+      //mbti값이 있으면 바로 axios 진행
     } else if (!mbti == "" && !raw == "") {
       axios
         .post(`api/v1/result/@${mbti}`, { answer: raw })
@@ -47,8 +55,11 @@ function Result() {
         })
         .catch((err) => err);
     } else {
+      //mbti도 없고 localstorage에 값도 없으면 home으로 보냄
       navigate("/");
     }
+    //cleanup: 카카오 sdk 제거
+    return () => document.body.removeChild(script);
   }, []);
 
   return (
@@ -80,11 +91,7 @@ function Result() {
                 <TwitterIcon size={48} round={true} borderRadius={24}></TwitterIcon>
               </TwitterShareButton>
               {/* 카카오톡 */}
-
-              <Helmet>
-                <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-              </Helmet>
-              <KakaoShareButton />
+              <KakaoShareBtn />
             </div>
           </div>
         </>

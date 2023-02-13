@@ -7,6 +7,7 @@ import { faFaceMehBlank, faFaceRollingEyes, faFaceSurprise } from "@fortawesome/
 import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 import useMbti from "../hooks/useMbti";
 import calculate from "../helper/calculate";
+import ProgressBar from "../components/ProgressBar";
 
 function Main() {
   const navigate = useNavigate();
@@ -22,7 +23,6 @@ function Main() {
   const [style2, setStyle2] = useState(styles.label);
   const [isHovering, setIsHovering] = useState(0);
   const [modal, setModal] = useState(0);
-
   const { setMbti, setRaw } = useMbti();
 
   useEffect(() => {
@@ -155,6 +155,7 @@ function Main() {
                 {isHovering ? <FontAwesomeIcon icon={faFaceRollingEyes} /> : <FontAwesomeIcon icon={faFaceMehBlank} />}
               </button>
             )}
+            <ProgressBar surveyId={surveyId} />
           </>
         ) : (
           <div className={styles.loading}>Now loading ...</div>

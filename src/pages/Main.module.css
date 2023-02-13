@@ -1,8 +1,8 @@
 .form {
   position: absolute;
   width: 100vw;
-  height: 35vw;
-  top: 6vw;
+  height: 90vh;
+  top: 10vh;
   /* left: 25vw; */
   font-size: 3vw;
   /* background-color: green; */
@@ -33,13 +33,14 @@
 
 .button {
   position: absolute;
-  left: 47vw;
-  top: 30vw;
+  left: 48vw;
+  top: 26vw;
   background-color: transparent;
   color: white;
   border: none;
-  font-size: 5vw;
-  width: 6vw;
+  font-size: 4vw;
+  line-height: 4vw;
+  width: 4vw;
   height: 4vw;
 }
 
@@ -49,13 +50,13 @@
 }
 
 .wrap {
-  margin-top: 3vw;
+  margin-top: 1vw;
 }
 
 .bg {
   position: absolute;
   width: 100vw;
-  height: 50vw;
+  height: 100vh;
   background-color: black;
   opacity: 0.5;
   z-index: 0;
@@ -70,6 +71,52 @@
 }
 
 .loading {
+  position: absolute;
+  display: inline-block;
+  top: 25vh;
+  left: 0;
+  width: 100vw;
   font-size: 5vw;
   color: white;
+}
+
+@media (orientation: portrait) {
+  .form {
+    position: absolute;
+    width: 90vw;
+    height: 60vh;
+    top: 15vh;
+    left: 5vw;
+    font-size: 4.5vw;
+    /* background-color: green; */
+    line-height: 2;
+    z-index: 10;
+  }
+  .button {
+    position: absolute;
+    left: 40vw;
+    top: 35vh;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 8vw;
+    line-height: 4vw;
+    width: 4vw;
+    height: 4vw;
+  }
+  .loading {
+    position: absolute;
+    top: 25vh;
+    left: -2.5vw;
+    width: 100vw;
+    font-size: 10vw;
+    color: white;
+  }
+  .modal {
+    position: absolute;
+    top: 47vh;
+    left: 30.5vw;
+    color: white;
+    font-size: 5vw;
+  }
 }
