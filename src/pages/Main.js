@@ -8,6 +8,7 @@ import { faUserTie, faShare } from "@fortawesome/free-solid-svg-icons";
 import useMbti from "../hooks/useMbti";
 import calculate from "../helper/calculate";
 import ProgressBar from "../components/ProgressBar";
+import ReactLoading from "react-loading";
 
 function Main() {
   const navigate = useNavigate();
@@ -26,7 +27,9 @@ function Main() {
   const { setMbti, setRaw } = useMbti();
 
   useEffect(() => {
-    setIsHovering(0);
+    setTimeout(function () {
+      setInit(1);
+    }, 1500);
 
     axios
       .get("api/v1/servey")
@@ -34,29 +37,28 @@ function Main() {
         // console.log(res.data.length);
         setTotalSurvey(res.data.length);
       })
-      .then(() => {
-        axios
-          .get(`api/v1/servey/${surveyId}`)
-          .then((res) => {
-            // console.log(res);
-            setQuestion(res.data.title);
-            setAnswer1(res.data.first_answer);
-            setAnswer2(res.data.second_answer);
-            setInit(1);
-          })
-          .catch((err) => err);
-      })
+      // .then(() => {
+      //   axios
+      //     .get(`api/v1/servey/${surveyId}`)
+      //     .then((res) => {
+      //       // console.log(res);
+      //       setQuestion(res.data.title);
+      //       setAnswer1(res.data.first_answer);
+      //       setAnswer2(res.data.second_answer);
+      //     })
+      //     .catch((err) => err);
+      // })
       .catch((err) => err);
   }, []);
 
   useEffect(() => {
-    if (result == "1") {
+    if (result === "1") {
       setStyle1(styles.choice);
       setStyle2(styles.label);
-    } else if (result == "2") {
+    } else if (result === "2") {
       setStyle2(styles.choice);
       setStyle1(styles.label);
-    } else if (result == "") {
+    } else if (result === "") {
       setStyle1(styles.label);
       setStyle2(styles.label);
     }
@@ -77,14 +79,14 @@ function Main() {
         })
         .catch((err) => err);
     }
-  }, [surveyId]);
+  }, [surveyId, totalSurvey]);
 
   const next = () => {
-    if (!result == "") {
+    if (result !== "") {
       setTotalResult(totalResult + result);
       setSurveyId(surveyId + 1);
       setIsHovering(0);
-    } else if (result == "") {
+    } else if (result === "") {
       setModal(1);
       setTimeout(function () {
         setModal(0);
@@ -101,12 +103,12 @@ function Main() {
   // }, [totalResult]);
 
   const showResult = () => {
-    if (result == "") {
+    if (result === "") {
       setModal(1);
       setTimeout(function () {
         setModal(0);
       }, 1000);
-    } else if (!result == "") {
+    } else if (result !== "") {
       setTotalResult(totalResult + result);
       setMbti(calculate(totalResult + result));
       setRaw(totalResult + result);
@@ -148,7 +150,7 @@ function Main() {
                 {answer2}
               </label>
             </div>
-            {surveyId == totalSurvey ? (
+            {surveyId === totalSurvey ? (
               <button className={styles.button} onClick={showResult} onMouseOver={() => setIsHovering(1)} onMouseOut={() => setIsHovering(0)}>
                 {isHovering ? <FontAwesomeIcon icon={faUserTie} /> : <FontAwesomeIcon icon={faFaceSurprise} />}
               </button>
@@ -157,20 +159,22 @@ function Main() {
                 {isHovering ? <FontAwesomeIcon icon={faFaceRollingEyes} /> : <FontAwesomeIcon icon={faFaceMehBlank} />}
               </button>
             )}
-            {!result == "" ? (
+            {result === "" ? (
+              ""
+            ) : (
               <div className={styles.clickMe}>
                 <div className={styles.arrow}>
                   <FontAwesomeIcon icon={faShare} />
                 </div>
-                <div>click me</div>
+                <div>click</div>
               </div>
-            ) : (
-              ""
             )}
             <ProgressBar surveyId={surveyId} />
           </>
         ) : (
-          <div className={styles.loading}>Now loading ...</div>
+          <div className={styles.loading}>
+            <ReactLoading type={"spokes"} color={"white"} height={"10vw"} width={"10vw"} />
+          </div>
         )}
       </form>
       <div className={styles.bg}></div>

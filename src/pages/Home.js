@@ -8,9 +8,10 @@ function Home() {
   const navigate = useNavigate();
   const [userCount, setUserCount] = useState(0);
   const [init, setInit] = useState(0);
+
   useEffect(() => {
     axios
-      .get("https://kimduhong.pythonanywhere.com/api/v1/result/count")
+      .get("https://kimduhong.pythonanywhere.com/api/v1/result/count") //이용자 수 불러오기
       .then((res) => {
         // console.log(res.data[0].all_count);
         setUserCount(res.data[0].all_count);
@@ -19,7 +20,7 @@ function Home() {
       .catch((err) => console.log(err));
   }, []);
   const start = () => {
-    navigate("/intro");
+    navigate("/intro"); //START 버튼 클릭 시 이동
   };
 
   return (
@@ -32,10 +33,10 @@ function Home() {
             <br />- 당신의 선택으로 알아보는 개발자 성향 -
           </h3>
           <br />
-          {!userCount == 0 ? <Counter count={userCount} /> : ""}
           <button className={styles.button} onClick={start}>
             Start
           </button>
+          {!userCount == 0 ? <Counter count={userCount} /> : ""}
         </div>
       ) : (
         ""

@@ -51,12 +51,12 @@
 
 @media (orientation: portrait) {
   .progress {
-    position: fixed;
+    position: absolute;
     width: 90vw;
     height: 5vw;
-    top: 65vh;
+    top: 60vh;
     line-height: 5vw;
-    left: 5vw;
+    left: 0;
     font-size: 7vw;
     color: white;
     display: flex;
@@ -64,34 +64,34 @@
   }
   .progress2 {
     width: 80vw;
-    left: 15vw;
+    left: 10vw;
   }
   .progress3 {
     width: 70vw;
-    left: 25vw;
+    left: 20vw;
   }
   .progress4 {
     width: 60vw;
-    left: 35vw;
+    left: 30vw;
   }
   .progress5 {
     width: 50vw;
-    left: 45vw;
+    left: 40vw;
   }
   .progress6 {
     width: 40vw;
-    left: 55vw;
+    left: 50vw;
   }
   .progress7 {
     width: 30vw;
-    left: 65vw;
+    left: 60vw;
   }
   .progress8 {
     width: 20vw;
-    left: 75vw;
+    left: 70vw;
   }
   .progress9 {
     width: 10vw;
-    left: 85vw;
+    left: 80vw;
   }
 }

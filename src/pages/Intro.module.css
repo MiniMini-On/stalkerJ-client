@@ -133,6 +133,14 @@
   z-index: 5;
 }
 
+.click {
+  position: absolute;
+  color: white;
+  top: 34vw;
+  left: 47.3vw;
+  font-size: 2vw;
+}
+
 @media (orientation: portrait) {
   .div {
     width: 70vw;
@@ -220,5 +228,13 @@
     border-radius: 20px;
     box-shadow: 5px 10px 8px #101010;
     z-index: 5;
+  }
+
+  .click {
+    position: absolute;
+    color: white;
+    top: 46vh;
+    left: 44vw;
+    font-size: 6vw;
   }
 }

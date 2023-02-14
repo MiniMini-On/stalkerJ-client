@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Intro.module.css";
 import msgImg from "../static/images/msg.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMobileScreen, faDoorClosed, faDoorOpen } from "@fortawesome/free-solid-svg-icons";
+import { faMobileScreen, faDoorClosed, faDoorOpen, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 function Intro() {
-  const [isHovering, setIsHovering] = useState(0);
+  const [isHovering, setIsHovering] = useState(0); //버튼 호버되었을 때 버튼의 className 값이 바뀌도록 하기 위함
   const [isClicked, setIsClicked] = useState(0);
   const navigate = useNavigate();
   const script = [
@@ -24,7 +24,7 @@ function Intro() {
 
   const next = () => {
     if (num < script.length) {
-      setNum(num + 1);
+      setNum(num + 1); //next버튼 클릭 시 script array의 key값이 증가, script array length 내에서 index 값 설정
     }
   };
 
@@ -37,9 +37,10 @@ function Intro() {
   };
 
   useEffect(() => {
-    setDisplay(script[num]);
+    setDisplay(script[num]); //script array에서 index에 해당하는 값이 디스플레이 됨
   }, [num]);
   // console.log(isClicked);
+
   return (
     <div className={styles.div}>
       <div className={styles.wrap}>
@@ -52,9 +53,16 @@ function Intro() {
           {isHovering ? <FontAwesomeIcon icon={faDoorOpen} /> : <FontAwesomeIcon icon={faDoorClosed} />}
         </button>
       ) : (
-        <button className={isHovering ? styles.vib : styles.button} onClick={next} onMouseOver={() => setIsHovering(1)} onMouseOut={() => setIsHovering(0)}>
-          <FontAwesomeIcon icon={faMobileScreen} />
-        </button>
+        <>
+          <button className={isHovering ? styles.button : styles.vib} onClick={next} onMouseOver={() => setIsHovering(1)} onMouseOut={() => setIsHovering(0)}>
+            <FontAwesomeIcon icon={faMobileScreen} />
+          </button>
+          <span className={styles.click}>
+            <FontAwesomeIcon icon={faArrowDown} />
+            <br />
+            click !
+          </span>
+        </>
       )}
     </div>
   );

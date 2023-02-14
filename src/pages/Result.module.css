@@ -1,20 +1,39 @@
 .div {
+  /* position: absolute; */
+  width: 90vw;
+  /* top:0; */
+  /* top: 10vh; */
   margin: auto;
-  height: 100vh;
-  width: 100%;
-  padding: 10px;
+  /* left: 5vw; */
+  /* right: 3vw; */
+  font-size: 3vw;
   overflow: scroll;
 }
 
+.bg {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.5;
+  z-index: -1;
+}
 .surmmary {
   color: #8d0801;
   justify-content: center;
+  width: 90vw;
   font-size: 3vw;
   margin-top: 10px;
 }
 
+.kind {
+  display: flex;
+}
+
 .header {
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 1vw;
   font-size: 4vw;
   display: flex;
   justify-content: center;
@@ -38,6 +57,35 @@
   z-index: -1;
 }
 
+.text_under2 {
+  position: relative;
+}
+.text_under2::after {
+  content: "";
+  width: 100%;
+  height: 80%;
+  background: #09761b;
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  bottom: 3px;
+  z-index: -1;
+}
+
+.text_under3 {
+  position: relative;
+}
+.text_under3::after {
+  content: "";
+  width: 100%;
+  height: 80%;
+  background: #e7cb44;
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  bottom: 3px;
+  z-index: -1;
+}
 .desc {
   /* font-size: pt; */
   margin-top: 20px;
@@ -51,27 +99,68 @@
 
 .content {
   font-size: 2.5vw;
-  margin-top: 3vw;
+  margin-top: 1.5vw;
+  margin: 1vw;
   color: white;
   justify-content: center;
-  line-height: 1.3em;
+  line-height: 6.5vh;
+}
+.othercontent {
+  width: 50%;
+  font-size: 2.5vw;
+  margin: 1vw;
+  color: white;
+  justify-content: center;
+  line-height: 6.5vh;
 }
 
 /* button */
+@-webkit-keyframes blink {
+  0% {
+    background-color: black;
+  }
+  100% {
+    background-color: #8d0801;
+  }
+}
+@keyframes blink {
+  0% {
+    background-color: black;
+  }
+  100% {
+    background-color: #8d0801;
+  }
+}
 .button1 {
   width: 7vw;
   height: 4vw;
   border-radius: 30%;
-  margin-top: 5vw;
-  /* margin:5vw; */
+  margin: 1vw;
   font-size: 2.5vw;
-  background-color: transparent;
+  background-color: black;
   border: 2px solid white;
   color: white;
-  /* vertical-align: middle; */
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-name: blink;
+  animation-name: blink;
+  animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+.button2 {
+  width: 7vw;
+  height: 4vw;
+  border-radius: 30%;
+  margin: 1vw;
+  font-size: 2.5vw;
+  background-color: black;
+  border: 2px solid white;
+  color: white;
 }
 
-.button1:hover {
+.button1:hover,
+.button2:hover {
   background-color: white;
   color: black;
   cursor: pointer;
@@ -83,8 +172,212 @@
   margin-top: 20px;
 }
 
+.button_group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -60px;
+}
+.group1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .loading {
+  width: 10vw;
   font-size: 5vw;
   color: white;
   margin-top: 20vw;
+  margin-left: 40vw;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.info {
+  color: white;
+  font-size: 2vw;
+}
+/* 미디어쿼리 */
+
+@media (orientation: portrait) {
+  .div {
+    top: 0;
+    /* top: 10vh; */
+    width: 100%;
+    margin: auto;
+    /* left: 5vw; */
+    /* right: 3vw; */
+    font-size: 3vw;
+    overflow: scroll;
+  }
+
+  .surmmary {
+    color: #8d0801;
+    margin: auto;
+    font-size: 5vw;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .header {
+    margin-top: 30px;
+    font-size: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8d0801;
+  }
+
+  .bg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  /* 개발자 유형 부분 색 다르게 */
+  .text_under {
+    position: relative;
+  }
+  .text_under::after {
+    content: "";
+    width: 100%;
+    height: 80%;
+    background: #e7cb44;
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    bottom: 3px;
+    z-index: -1;
+  }
+
+  .text_under2 {
+    position: relative;
+  }
+  .text_under2::after {
+    content: "";
+    width: 100%;
+    height: 80%;
+    background: #09761b;
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    bottom: 3px;
+    z-index: -1;
+  }
+
+  .text_under3 {
+    position: relative;
+  }
+  .text_under3::after {
+    content: "";
+    width: 100%;
+    height: 80%;
+    background: #e7cb44;
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    bottom: 3px;
+    z-index: -1;
+  }
+  .desc {
+    /* font-size: pt; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .content_container {
+    margin: 3vh;
+    margin-bottom: 0;
+    padding: 5px;
+  }
+
+  .content {
+    font-size: 4.2vw;
+    margin-top: 1.5vw;
+    color: white;
+    justify-content: center;
+    line-height: 2em;
+  }
+  .othercontent {
+    width: 50%;
+    font-size: 4.2vw;
+    margin: 1vw;
+    color: white;
+    justify-content: center;
+    line-height: 6.5vh;
+  }
+  /* button */
+
+  .button1 {
+    width: 20vw;
+    height: 10vw;
+    border-radius: 30%;
+    margin: 3vw;
+    font-size: 7vw;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-name: blink;
+    animation-name: blink;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
+  .button2 {
+    width: 20vw;
+    height: 10vw;
+    border-radius: 30%;
+    margin: 3vw;
+    font-size: 7vw;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+  }
+
+  .button1:hover,
+  .button2:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }
+
+  .social_btn {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  .button_group {
+    margin-top: 0px;
+  }
+
+  .loading {
+    font-size: 5vw;
+    color: white;
+    margin-top: 20vw;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .loading {
+    width: 10vw;
+    font-size: 5vw;
+    color: white;
+    margin-top: 40vh;
+    margin-left: 45vw;
+  }
+
+  .info {
+    color: white;
+    font-size: 5vw;
+  }
 }
