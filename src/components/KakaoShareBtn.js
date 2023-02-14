@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./KakaoShareBtn.module.css";
 function KakaoShareBtn() {
   useEffect(() => {
-    window.Kakao.init(process.env.REACT_APP_JAVASCRIPT_KEY);
+    window.Kakao.init(REACT_APP_JAVASCRIPT_KEY);
     window.Kakao.isInitialized(); // init되면 true, 아니면 false를 반환한다
   }, []);
   const shareKakao = () => {
