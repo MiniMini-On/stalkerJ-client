@@ -36,7 +36,7 @@ function Home() {
           <button className={styles.button} onClick={start}>
             Start
           </button>
-          {!userCount == 0 ? <Counter count={userCount} /> : ""}
+          {userCount !== 0 ? <Counter count={userCount} /> : ""}
         </div>
       ) : (
         ""
