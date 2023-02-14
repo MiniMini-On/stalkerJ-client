@@ -108,13 +108,13 @@
     left: 5vw;
     font-size: 4.5vw;
     /* background-color: green; */
-    line-height: 2;
+    line-height: 4;
     z-index: 10;
   }
   .button {
     position: absolute;
     left: 40vw;
-    top: 40vh;
+    top: 45vh;
     background-color: transparent;
     color: white;
     border: none;
@@ -122,6 +122,9 @@
     line-height: 4vw;
     width: 4vw;
     height: 4vw;
+  }
+  .h2 {
+    line-height: 2;
   }
   .loading {
     position: absolute;
@@ -133,7 +136,7 @@
   }
   .modal {
     position: absolute;
-    top: 47vh;
+    top: 56vh;
     left: 30.5vw;
     color: white;
     font-size: 5vw;
@@ -141,7 +144,7 @@
   .clickMe {
     position: absolute;
     display: flex;
-    top: 33vh;
+    top: 39vh;
     left: 36vw;
     color: white;
     font-size: 5vw;

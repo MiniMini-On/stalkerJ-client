@@ -40,8 +40,13 @@ function Intro() {
 
   useEffect(() => {
     setDisplay(script[num]); //script array에서 index에 해당하는 값이 디스플레이 됨
+    setIsHovering(0);
   }, [num, script]);
   // console.log(isClicked);
+
+  // useEffect(() => {
+  //   console.log(isHovering);
+  // }, [isHovering]);
 
   return (
     <div className={styles.div}>
@@ -62,7 +67,7 @@ function Intro() {
           <span className={styles.click}>
             <FontAwesomeIcon icon={faArrowDown} />
             <br />
-            click !
+            click
           </span>
         </>
       )}
