@@ -4,11 +4,10 @@ import axios from "axios";
 
 function Modal({ onClose }) {
   const handleClose = (e) => {
-    // console.log(e.target);
     onClose?.();
   };
   return (
-    <Overlay onClick={handleClose}>
+    <Overlay>
       <ModalWrap>
         <Contents>
           <Content>
@@ -18,9 +17,7 @@ function Modal({ onClose }) {
           </Content>
           <LinkButton
             onClick={() => {
-              axios.post("api/v1/count/", { type: "oz" }).then((res) => {
-                console.log(res);
-              });
+              axios.post("api/v1/count/", { type: "oz" });
               window.open("https://ozcodingschool.com/");
             }}
           >
@@ -28,9 +25,7 @@ function Modal({ onClose }) {
           </LinkButton>
           <LinkButton
             onClick={() => {
-              axios.post("api/v1/count/", { type: "intro" }).then((res) => {
-                console.log(res);
-              });
+              axios.post("api/v1/count/", { type: "intro" });
               window.open("https://fluorescent-keyboard-35b.notion.site/Staff-f14b56045d624e1ba9974184be8019c3");
             }}
           >
