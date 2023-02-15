@@ -16,7 +16,7 @@ function App() {
           <h1>스토커J에 대하여 (feat. 개발자 성향 테스트)</h1>
         </header>
       ) : (
-        ""
+        <p>loading</p>
       )}
       <AppRouter />
     </div>
