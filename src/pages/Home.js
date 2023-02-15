@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     setTimeout(function () {
       setInit(1);
-    }, 600);
+    }, 700);
   }, []);
 
   useEffect(() => {
