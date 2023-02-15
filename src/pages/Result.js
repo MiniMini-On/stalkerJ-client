@@ -115,9 +115,11 @@ function Result() {
             <p className={styles.info}>스토커J의 정체는 Info에서 확인하실 수 있습니다</p>
             <p className={styles.info2}>↘︎</p>
             <div className={styles.group1}>
-              <button className={styles.button2} onClick={() => navigate("/")}>
-                Retry
-              </button>
+              <div className={styles.modalwrap}>
+                <button className={styles.button2} onClick={() => navigate("/")}>
+                  Retry
+                </button>
+              </div>
               <div className={styles.modalwrap}>
                 <button className={styles.button1} onClick={onClickButton}>
                   Info

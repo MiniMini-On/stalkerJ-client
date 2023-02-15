@@ -26,8 +26,10 @@
 
 /* kind:개발자 유형 */
 .kind {
+  position: relative;
   display: flex;
   margin-top: 40px;
+  z-index: 0;
 }
 
 /* header */
@@ -430,6 +432,8 @@
   }
 
   .button_group {
+    position: relative;
+    z-index: 100;
     margin-top: 0px;
     margin-bottom: 20px;
   }
