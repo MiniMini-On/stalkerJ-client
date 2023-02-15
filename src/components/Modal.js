@@ -68,7 +68,8 @@ const ModalWrap = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   @media (orientation: portrait) {
-    width: 70%;
+    width: 85%;
+    height: 60%;
   }
 `;
 
@@ -79,6 +80,9 @@ const Contents = styled.div`
   white-space: pre-line;
   align-items: center;
   word-spacing: 1px;
+  @media (orientation: portrait) {
+    margin-top: 30%;
+  }
 `;
 
 const Content = styled.div`
@@ -86,7 +90,7 @@ const Content = styled.div`
   font-family: initial;
   font-size: 1.2rem;
   @media (orientation: portrait) {
-    font-size: 3vw;
+    font-size: 5vw;
     width: 90%;
   }
 `;
@@ -111,9 +115,9 @@ const LinkButton = styled.button`
     border: 1px solid white;
   }
   @media (orientation: portrait) {
-    width: 70%;
+    width: 90%;
     height: 4vh;
-    font-size: 2vw;
+    font-size: 5vw;
   }
 `;
 const CloseButton = styled.button`
