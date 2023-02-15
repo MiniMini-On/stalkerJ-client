@@ -21,14 +21,14 @@ function Result() {
   const [surmmary, setSurmmary] = useState();
   const [similar, setSimilar] = useState();
   const [worst, setWorst] = useState();
-  const { mbti, setMbti, raw } = useMbti();
+  const { mbti, setMbti, raw, setRaw } = useMbti();
   const [init, setInit] = useState(0);
   const [ModalisOpen, setModalIsOpen] = useState(false);
 
   // info modal
   const onClickButton = () => {
     axios.post("api/v1/count/", { type: "info" }).then((res) => {
-      console.log(res);
+      // console.log(res);
     });
 
     setModalIsOpen(true);
@@ -49,6 +49,7 @@ function Result() {
     document.body.appendChild(script);
     // mbti가 없으면 sessionStorage에서 불러옴
     if (mbti === "" && sessionStorage.getItem("mbti") && sessionStorage.getItem("raw")) {
+      setRaw(sessionStorage.getItem("raw"));
       axios
         .post(`api/v1/result/@${sessionStorage.getItem("mbti")}`, {
           answer: sessionStorage.getItem("raw"),
@@ -82,7 +83,7 @@ function Result() {
     }
     //cleanup: 카카오 sdk 제거
     return () => document.body.removeChild(script);
-  }, [mbti, navigate, raw, setMbti]);
+  }, [mbti, navigate, raw, setMbti, setRaw]);
 
   return (
     <div className={styles.div}>
