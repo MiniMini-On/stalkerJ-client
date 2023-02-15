@@ -6,7 +6,7 @@ import axios from "axios";
 import useMbti from "../hooks/useMbti";
 import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon } from "react-share";
 import KakaoShareBtn from "../components/KakaoShareBtn";
-import styled from "styled-components";
+// import styled from "styled-components";
 // import { CopyToClipboard } from "react-copy-to-clipboard";
 // import { useScript } from "../hooks/Kakao";
 // import kakaoLogo from "../static/images/kakao.png";
@@ -108,7 +108,6 @@ function Result() {
 
   return (
     <div className={styles.div}>
-      {/* <MetaTag /> */}
       <div className={styles.bg}></div>
       {init ? (
         <>
@@ -131,7 +130,6 @@ function Result() {
                 <span className={styles.text_under2}>{worst}</span>입니다.
               </div>
             </div>
-            {/* </Type> */}
           </div>
 
           <div className={styles.button_group}>
@@ -139,7 +137,7 @@ function Result() {
               <button className={styles.button2} onClick={() => navigate("/")}>
                 Retry
               </button>
-              <ModalWrap>
+              <div className={styles.modalwrap}>
                 <button className={styles.button1} onClick={onClickButton}>
                   Info
                 </button>
@@ -151,11 +149,11 @@ function Result() {
                     }}
                   />
                 )}
-              </ModalWrap>
+              </div>
             </div>
             <div>
-              <FlexContainer>
-                <GridContainer>
+              <div className={styles.flex_container}>
+                <div className={styles.grid_container}>
                   <FacebookShareButton url={shareUrl}>
                     <FacebookIcon size={48} round={true} borderRadius={24}></FacebookIcon>
                   </FacebookShareButton>
@@ -163,11 +161,8 @@ function Result() {
                     <TwitterIcon size={48} round={true} borderRadius={24}></TwitterIcon>
                   </TwitterShareButton>
                   <KakaoShareBtn />
-                  {/* <KakaoShareButton onClick={shareKakao}>
-                    <KakaoIcon src={kakaoLogo}></KakaoIcon>
-                  </KakaoShareButton> */}
-                </GridContainer>
-              </FlexContainer>
+                </div>
+              </div>
             </div>
             <p className={styles.info}>스토커J의 정체는 Info에서 확인하실 수 있습니다</p>
           </div>
@@ -182,58 +177,3 @@ function Result() {
 }
 
 export default Result;
-
-// 제목과 버튼을 감싸는 컨테이너
-const FlexContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  margin-top: 10px;
-`;
-
-// 버튼을 배치시키는 컨테이너
-const GridContainer = styled.div`
-  display: flex;
-  width: 20%;
-  justify-content: space-around;
-  align-items: space-around;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  @media (orientation: portrait) {
-    width: 60%;
-  }
-`;
-
-// const URLShareButton = styled.button`
-//   width: 46.5px;
-//   height: 48.5px;
-//   color: white;
-//   border-radius: 24px;
-//   border: 0px;
-//   font-weight: 800;
-//   font-size: 18px;
-//   cursor: pointer;
-//   background-color: #7362ff;
-
-//   }
-// `;
-// const KakaoShareButton = styled.a`
-//   cursor: pointer;
-// `;
-
-// const KakaoIcon = styled.img`
-//   width: 46.5px;
-//   height: 46.5px;
-//   border-radius: 24px;
-// `;
-
-// const Type = styled.div`
-//   postion: flex;
-// `;
-// 미디어 쿼리
-
-const ModalWrap = styled.div`
-  text-align: center;
-  z-index: 1;
-`;
