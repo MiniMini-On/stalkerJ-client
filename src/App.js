@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     setTimeout(function () {
       setInit(1);
-    }, 500);
+    }, 600);
   }, []);
   return (
     <div>
