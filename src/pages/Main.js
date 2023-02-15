@@ -119,64 +119,63 @@ function Main() {
 
   return (
     <>
-      <form className={styles.form} onSubmit={submit}>
-        {init ? (
-          <>
-            <h2 className={styles.h2}>{question}</h2>
-            <div className={styles.wrap}>
-              <input
-                onClick={() => {
-                  setResult("1");
-                }}
-                className={styles.input}
-                type="radio"
-                id="answer1"
-                name="answer"
-              />
-              <label className={style1} htmlFor="answer1">
-                {answer1}
-              </label>
-              <br />
-              <input
-                onClick={() => {
-                  setResult("2");
-                }}
-                className={styles.input}
-                type="radio"
-                id="answer2"
-                name="answer"
-              />
-              <label className={style2} htmlFor="answer2">
-                {answer2}
-              </label>
-            </div>
-            {surveyId === totalSurvey ? (
-              <button className={styles.button} onClick={showResult} onMouseOver={() => setIsHovering(1)} onMouseOut={() => setIsHovering(0)}>
-                {isHovering ? <FontAwesomeIcon icon={faUserTie} /> : <FontAwesomeIcon icon={faFaceSurprise} />}
-              </button>
-            ) : (
-              <button className={styles.button} onClick={next} onMouseOver={() => setIsHovering(1)} onMouseOut={() => setIsHovering(0)}>
-                {isHovering ? <FontAwesomeIcon icon={faFaceRollingEyes} /> : <FontAwesomeIcon icon={faFaceMehBlank} />}
-              </button>
-            )}
-            {result === "" ? (
-              ""
-            ) : (
-              <div className={styles.clickMe}>
-                <div className={styles.arrow}>
-                  <FontAwesomeIcon icon={faShare} />
-                </div>
-                <div>click</div>
-              </div>
-            )}
-            <ProgressBar surveyId={surveyId} />
-          </>
-        ) : (
-          <div className={styles.loading}>
-            <ReactLoading type={"spokes"} color={"white"} height={"10vw"} width={"10vw"} />
+      {init ? (
+        <form className={styles.form} onSubmit={submit}>
+          <h2 className={styles.h2}>{question}</h2>
+          <div className={styles.wrap}>
+            <input
+              onClick={() => {
+                setResult("1");
+              }}
+              className={styles.input}
+              type="radio"
+              id="answer1"
+              name="answer"
+            />
+            <label className={style1} htmlFor="answer1">
+              {answer1}
+            </label>
+            <br />
+            <input
+              onClick={() => {
+                setResult("2");
+              }}
+              className={styles.input}
+              type="radio"
+              id="answer2"
+              name="answer"
+            />
+            <label className={style2} htmlFor="answer2">
+              {answer2}
+            </label>
           </div>
-        )}
-      </form>
+          {surveyId === totalSurvey ? (
+            <button className={styles.button} onClick={showResult} onMouseOver={() => setIsHovering(1)} onMouseOut={() => setIsHovering(0)}>
+              {isHovering ? <FontAwesomeIcon icon={faUserTie} /> : <FontAwesomeIcon icon={faFaceSurprise} />}
+            </button>
+          ) : (
+            <button className={styles.button} onClick={next} onMouseOver={() => setIsHovering(1)} onMouseOut={() => setIsHovering(0)}>
+              {isHovering ? <FontAwesomeIcon icon={faFaceRollingEyes} /> : <FontAwesomeIcon icon={faFaceMehBlank} />}
+            </button>
+          )}
+          {result === "" ? (
+            ""
+          ) : (
+            <div className={styles.clickMe}>
+              <div className={styles.arrow}>
+                <FontAwesomeIcon icon={faShare} />
+              </div>
+              <div>click</div>
+            </div>
+          )}
+          <ProgressBar surveyId={surveyId} />
+        </form>
+      ) : (
+        <div className={styles.loading}>
+          <ReactLoading type={"spokes"} color={"white"} height={"10vw"} width={"10vw"} />
+        </div>
+      )}
+
       <div className={styles.bg}></div>
       {modal ? <div className={styles.modal}>당신은 선택해야만 합니다</div> : ""}
     </>

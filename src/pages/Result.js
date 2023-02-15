@@ -27,34 +27,15 @@ function Result() {
 
   // info modal
   const onClickButton = () => {
+    axios.post("api/v1/count/", { type: "info" }).then((res) => {
+      console.log(res);
+    });
+
     setModalIsOpen(true);
   };
 
   // 첫 화면이 공유 링크가 되도록 설정 (나중에는 배포한 도메인으로 수정예정)
-  const shareUrl = window.location.href.replace("result", "");
-  // console.log(shareUrl);
-
-  // kakao SDK import하기
-  // const status = useScript("https://developers.kakao.com/sdk/js/kakao.js");
-
-  // kakao sdk 초기화하기
-  // status가 변경될 때마다 실행되며, status가 ready일 때 초기화를 시도
-  // useEffect(() => {
-  //   if (status === "ready" && window.Kakao) {
-  //     // 중복 initialization 방지
-  //     if (!window.Kakao.isInitialized()) {
-  //       // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
-  //       // init에 카카오 javascript key 입력
-  //       window.Kakao.init("45cd70138fba6be56ebfff3df807aa7c");
-  //     }
-  //   }
-  // }, [status]);
-
-  // const shareKakao = () => {
-  //   window.Kakao.Link.sendCustom({
-  //     templateId: 89914, // 템플릿 아이디 입력
-  //   });
-  // };
+  const shareUrl = "https://endearing-dolphin-42b437.netlify.app/";
 
   // api POST - axios.defaults.baseURL = "https://kimduhong.pythonanywhere.com/"
   useEffect(() => {
@@ -68,9 +49,6 @@ function Result() {
     document.body.appendChild(script);
     // mbti가 없으면 sessionStorage에서 불러옴
     if (mbti === "" && sessionStorage.getItem("mbti") && sessionStorage.getItem("raw")) {
-      // setMbti(sessionStorage.getItem("mbti"));
-      // setRaw(sessionStorage.getItem("raw"));
-      // console.log(sessionStorage.getItem("mbti"));
       axios
         .post(`api/v1/result/@${sessionStorage.getItem("mbti")}`, {
           answer: sessionStorage.getItem("raw"),

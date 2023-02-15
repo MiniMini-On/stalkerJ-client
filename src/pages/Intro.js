@@ -42,6 +42,10 @@ function Intro() {
     setDisplay(script[num]); //script array에서 index에 해당하는 값이 디스플레이 됨
     setIsHovering(0);
   }, [num, script]);
+
+  const skip = () => {
+    navigate("/main");
+  };
   // console.log(isClicked);
 
   // useEffect(() => {
@@ -71,6 +75,9 @@ function Intro() {
           </span>
         </>
       )}
+      <button className={styles.skip} onClick={skip}>
+        &gt; 스토리 건너뛰기
+      </button>
     </div>
   );
 }

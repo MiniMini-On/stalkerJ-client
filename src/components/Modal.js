@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 function Modal({ onClose }) {
   const handleClose = (e) => {
@@ -15,8 +16,26 @@ function Modal({ onClose }) {
             <BoldText>린스타트업 맞춤형 Serverless MVP 개발 전문가 양성 과정 1기 3팀이 3일만에 구현한 결과물</BoldText>
             입니다.
           </Content>
-          <LinkButton onClick={() => window.open("https://ozcodingschool.com/")}>오즈코딩스쿨 알아보기 &gt;</LinkButton>
-          <LinkButton onClick={() => window.open("https://fluorescent-keyboard-35b.notion.site/Staff-f14b56045d624e1ba9974184be8019c3")}>팀 소개 페이지 &gt;</LinkButton>
+          <LinkButton
+            onClick={() => {
+              axios.post("api/v1/count/", { type: "oz" }).then((res) => {
+                console.log(res);
+              });
+              window.open("https://ozcodingschool.com/");
+            }}
+          >
+            오즈코딩스쿨 알아보기 &gt;
+          </LinkButton>
+          <LinkButton
+            onClick={() => {
+              axios.post("api/v1/count/", { type: "intro" }).then((res) => {
+                console.log(res);
+              });
+              window.open("https://fluorescent-keyboard-35b.notion.site/Staff-f14b56045d624e1ba9974184be8019c3");
+            }}
+          >
+            팀 소개 페이지 &gt;
+          </LinkButton>
           <CloseButton onClick={handleClose}>x</CloseButton>
         </Contents>
       </ModalWrap>

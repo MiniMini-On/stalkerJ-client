@@ -1,11 +1,6 @@
 .div {
-  /* position: absolute; */
   width: 90vw;
-  /* top:0; */
-  /* top: 10vh; */
   margin: auto;
-  /* left: 5vw; */
-  /* right: 3vw; */
   font-size: 3vw;
   overflow: scroll;
 }
@@ -19,6 +14,8 @@
   opacity: 0.5;
   z-index: -1;
 }
+
+/* summary:한줄 요약 */
 .surmmary {
   color: #8d0801;
   justify-content: center;
@@ -27,10 +24,12 @@
   margin-top: 10px;
 }
 
+/* kind:개발자 유형 */
 .kind {
   display: flex;
 }
 
+/* header */
 .header {
   margin-top: 10px;
   margin-bottom: 1vw;
@@ -41,10 +40,11 @@
   color: #8d0801;
 }
 
-/* 개발자 유형 부분 색 다르게 */
+/* 개발자 유형 나오는 부분 강조 */
 .text_under {
   position: relative;
 }
+
 .text_under::after {
   content: "";
   width: 100%;
@@ -57,9 +57,11 @@
   z-index: -1;
 }
 
+/* similar  */
 .text_under2 {
   position: relative;
 }
+
 .text_under2::after {
   content: "";
   width: 100%;
@@ -72,9 +74,11 @@
   z-index: -1;
 }
 
+/* worst */
 .text_under3 {
   position: relative;
 }
+
 .text_under3::after {
   content: "";
   width: 100%;
@@ -86,17 +90,18 @@
   bottom: 3px;
   z-index: -1;
 }
+
 .desc {
-  /* font-size: pt; */
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
+/* 내용 부분 container */
 .content_container {
   margin: 5px 15px 15px 15px; /* 상하좌우 */
-  /* padding: 20px; */
 }
 
+/* content */
 .content {
   font-size: 2.5vw;
   margin-top: 1.5vw;
@@ -105,6 +110,8 @@
   justify-content: center;
   line-height: 6.5vh;
 }
+
+/* similar & worst content */
 .othercontent {
   width: 50%;
   font-size: 2.5vw;
@@ -114,7 +121,7 @@
   line-height: 6.5vh;
 }
 
-/* button */
+/* button CSS --------------------------------------------- */
 @-webkit-keyframes blink {
   0% {
     background-color: black;
@@ -178,11 +185,13 @@
   justify-content: center;
   margin-top: -60px;
 }
+
 .group1 {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .loading {
   width: 10vw;
   font-size: 5vw;
@@ -200,6 +209,7 @@
   font-size: 2vw;
 }
 
+/* container CSS --------------------------------------------- */
 /* 제목과 버튼을 감싸는 컨테이너 */
 .flex_container {
   display: flex;
@@ -217,25 +227,20 @@
   align-items: space-around;
   margin-top: 10px;
   margin-bottom: 10px;
-  @media (orientation: portrait) {
-    width: 60%;
-  }
 }
 
+/* modal CSS --------------------------------------------- */
 .modalwrap {
   text-align: center;
   z-index: 1;
 }
 
-/* 미디어쿼리 */
+/* 미디어쿼리 --------------------------------------------- */
 @media (orientation: portrait) {
   .div {
     top: 0;
-    /* top: 10vh; */
     width: 100%;
     margin: auto;
-    /* left: 5vw; */
-    /* right: 3vw; */
     font-size: 3vw;
     overflow: scroll;
   }
@@ -259,6 +264,7 @@
 
   .bg {
     position: absolute;
+    /* display: none; */
     width: 100vw;
     height: 100vh;
     background-color: black;
@@ -266,10 +272,10 @@
     z-index: -1;
   }
 
-  /* 개발자 유형 부분 색 다르게 */
   .text_under {
     position: relative;
   }
+
   .text_under::after {
     content: "";
     width: 100%;
@@ -300,6 +306,7 @@
   .text_under3 {
     position: relative;
   }
+
   .text_under3::after {
     content: "";
     width: 100%;
@@ -311,8 +318,8 @@
     bottom: 3px;
     z-index: -1;
   }
+
   .desc {
-    /* font-size: pt; */
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -338,8 +345,8 @@
     justify-content: center;
     line-height: 6.5vh;
   }
-  /* button */
 
+  /* button CSS --------------------------------------------- */
   .button1 {
     width: 20vw;
     height: 10vw;
@@ -357,6 +364,7 @@
     -webkit-animation-direction: alternate;
     animation-iteration-count: infinite;
   }
+
   .button2 {
     width: 20vw;
     height: 10vw;
@@ -385,12 +393,6 @@
     margin-top: 0px;
   }
 
-  .loading {
-    font-size: 5vw;
-    color: white;
-    margin-top: 20vw;
-  }
-
   ::-webkit-scrollbar {
     display: none;
   }
@@ -406,5 +408,15 @@
   .info {
     color: white;
     font-size: 5vw;
+    margin-top: 5vw;
+  }
+
+  .grid_container {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    align-items: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
