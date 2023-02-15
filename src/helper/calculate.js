@@ -1,6 +1,6 @@
 function calculate(totalResult) {
   let raw = "";
-  const calculation = { e: 0, i: 0, s: 0, n: 0, t: 0, p: 0, j: 0 };
+  const calculation = { e: 0, i: 0, s: 0, n: 0, t: 0, f: 0, p: 0, j: 0 };
 
   totalResult[0] === "1" ? (calculation.p += 1) : (calculation.j += 1);
   totalResult[1] === "1" ? (calculation.j += 1) : (calculation.p += 1);
