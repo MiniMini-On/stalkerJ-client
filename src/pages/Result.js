@@ -13,8 +13,6 @@ import KakaoShareBtn from "../components/KakaoShareBtn";
 // import MetaTag from "../helper/MetaTag";
 import Modal from "../components/Modal";
 import ReactLoading from "react-loading";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 function Result() {
   const navigate = useNavigate();
@@ -115,9 +113,7 @@ function Result() {
 
           <div className={styles.button_group}>
             <p className={styles.info}>스토커J의 정체는 Info에서 확인하실 수 있습니다</p>
-            <p className={styles.info2}>
-              <FontAwesomeIcon icon={faArrowDown} />
-            </p>
+            <p className={styles.info2}>↘︎</p>
             <div className={styles.group1}>
               <button className={styles.button2} onClick={() => navigate("/")}>
                 Retry
