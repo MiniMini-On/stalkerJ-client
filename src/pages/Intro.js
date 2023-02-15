@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Intro.module.css";
 import msgImg from "../static/images/msg.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMobileScreen, faDoorClosed, faDoorOpen, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faMobileScreen, faDoorClosed, faDoorOpen, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 function Intro() {
   const [isHovering, setIsHovering] = useState(0); //버튼 호버되었을 때 버튼의 className 값이 바뀌도록 하기 위함
@@ -69,7 +69,7 @@ function Intro() {
             <FontAwesomeIcon icon={faMobileScreen} />
           </button>
           <span className={styles.click}>
-            <FontAwesomeIcon icon={faArrowDown} />
+            <FontAwesomeIcon icon={faArrowUp} />
             <br />
             click
           </span>
