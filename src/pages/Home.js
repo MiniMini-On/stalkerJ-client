@@ -10,12 +10,17 @@ function Home() {
   const [init, setInit] = useState(0);
 
   useEffect(() => {
+    setTimeout(function () {
+      setInit(1);
+    }, 1500);
+  }, []);
+
+  useEffect(() => {
     axios
       .get("https://kimduhong.pythonanywhere.com/api/v1/result/count") //이용자 수 불러오기
       .then((res) => {
         // console.log(res.data[0].all_count);
         setUserCount(res.data[0].all_count);
-        setInit(1);
       })
       .catch((err) => console.log(err));
   }, []);
