@@ -71,8 +71,8 @@
     font-size: 6vw;
   }
   .button {
-    position: fixed;
-    top: 55vh;
+    position: absolute;
+    top: 30vh;
     left: 42vw;
     width: 17vw;
     height: 10vw;
