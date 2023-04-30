@@ -10,7 +10,7 @@ function Modal({ onClose }) {
     <Overlay>
       <ModalWrap>
         <Contents>
-          <Content>
+          {/* <Content>
             본 심리테스트는 오즈코딩스쿨
             <BoldText>린스타트업 맞춤형 Serverless MVP 개발 전문가 양성 과정 1기 3팀이 3일만에 구현한 결과물</BoldText>
             입니다.
@@ -22,7 +22,7 @@ function Modal({ onClose }) {
             }}
           >
             오즈코딩스쿨 알아보기 &gt;
-          </LinkButton>
+          </LinkButton> */}
           <LinkButton
             onClick={() => {
               axios.post("api/v1/count/", { type: "intro" });
