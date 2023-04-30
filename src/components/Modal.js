@@ -80,19 +80,19 @@ const Contents = styled.div`
   }
 `;
 
-const Content = styled.div`
-  width: 330px;
-  font-family: initial;
-  font-size: 1.2rem;
-  @media (orientation: portrait) {
-    font-size: 5vw;
-    width: 90%;
-  }
-`;
-const BoldText = styled.p`
-  margin: 5%;
-  font-weight: bold;
-`;
+// const Content = styled.div`
+//   width: 330px;
+//   font-family: initial;
+//   font-size: 1.2rem;
+//   @media (orientation: portrait) {
+//     font-size: 5vw;
+//     width: 90%;
+//   }
+// `;
+// const BoldText = styled.p`
+//   margin: 5%;
+//   font-weight: bold;
+// `;
 const LinkButton = styled.button`
   margin: 8%;
   width: 280px;
